@@ -445,7 +445,7 @@ void Renderer::CreateBuffers()
     Vector3 vertexData[3] =
     {
         {-0.5f, -0.5f, 0.0f},
-        {0.0f, -0.5f, 0.0f},
+        {0.0f, 0.5f, 0.0f},
         {0.5f, -0.5f, 0.0f}
     };
 
@@ -514,7 +514,7 @@ void Renderer::CreatePipeline()
     // Rasterizer Options
     VkPipelineRasterizationStateCreateInfo rasterizerInfo{};
     rasterizerInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
-    rasterizerInfo.cullMode = VK_CULL_MODE_NONE; // TODO -- BACK_BIT
+    rasterizerInfo.cullMode = VK_CULL_MODE_BACK_BIT;
     rasterizerInfo.frontFace = VK_FRONT_FACE_CLOCKWISE;
     rasterizerInfo.lineWidth = 1.f;
 
